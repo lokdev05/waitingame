@@ -1,0 +1,173 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(assets/world-smile-day-emojis.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.game_container {
+    height: 95%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 0 50px;
+    border-radius: 50px;
+}
+
+.game_container h2 {
+    font-size: 3rem;
+    color: #02c39a;
+
+}
+
+.compteur_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.compteur {
+    width: 150px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.compteur p {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #05668d;
+}
+
+.compteur p span {
+    font-size: 1.6rem;
+}
+
+
+.game_container button {
+    font-size: 1.8rem;
+    font-weight: 600;
+    border: 1px solid #fff;
+    background: #EEEEEE;
+    color: #05668d;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    margin: 20px;
+}
+
+.game_container button:hover {
+    background: transparent;
+    border: 1px solid #05668d;
+}
+
+.win_msg {
+    font-size: 3rem;
+    color: #fff;
+    background: #05668d;
+    padding: 10px 50px;
+    position: absolute;
+    top: -100%;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    text-align: center;
+}
+
+.win_msg.win {
+    top: auto;
+}
+
+.game_content {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.card {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: #fff;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    transform: rotateY(180deg);
+    cursor: pointer;
+   
+}
+
+.card:hover {
+    transform: scale(105%) rotateY(180deg);
+}
+
+.card.turnBox {
+    transform: rotateY(0deg);
+    border: 2px solid #00a896;
+
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background:  #02c39a;
+    transition: all .3s ease-in-out;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    border: 1px solid #02c39a;
+
+}
+
+.turnBox::after,
+.matching::after {
+    transform: rotateY(90deg);
+}
+
+.matching {
+    border: 2px solid #02c39a;
+
+}
